@@ -10,12 +10,12 @@
     <header>
         <div class="container">
             <!-- Botão de Menu Responsivo -->
-            <div class="menu-toggle" onclick="document.querySelector('header nav ul').classList.toggle('active')">
+            <div class="menu-toggle" onclick="toggleMenu()">
                 <span></span>
                 <span></span>
                 <span></span>
             </div>
-            <nav>
+            <nav id="navbar">
                 <ul>
                     <li><a href="index.html" class="menu-home" data-lang-pt="Home" data-lang-en="Home">Home</a></li>
                     <li><a href="curriculo.html" class="menu-curriculo" data-lang-pt="Currículo" data-lang-en="Resume">Currículo</a></li>
@@ -81,6 +81,10 @@
     </footer>
 
     <script>
+        function toggleMenu() {
+            document.getElementById("navbar").classList.toggle("active");
+        }
+
         function translatePage() {
             const urlParams = new URLSearchParams(window.location.search);
             const lang = urlParams.get('lang') || 'pt';

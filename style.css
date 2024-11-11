@@ -329,12 +329,12 @@ footer {
     line-height: 1.6;
 }
 
-/* Adicionando estilos para o botão de menu para dispositivos móveis */
+/* Estilo do menu para dispositivos móveis */
 .menu-toggle {
-    display: none; /* Oculto por padrão */
+    display: none;
     cursor: pointer;
     flex-direction: column;
-    gap: 4px;
+    gap: 5px;
 }
 
 .menu-toggle span {
@@ -344,10 +344,18 @@ footer {
     transition: 0.3s;
 }
 
-/* Tornando o menu responsivo */
+/* Oculta o menu no mobile por padrão */
+#navbar ul {
+    display: flex;
+}
+
 @media (max-width: 768px) {
-    header nav ul {
-        display: none; /* Escondido em dispositivos móveis por padrão */
+    .menu-toggle {
+        display: flex; /* Exibe o botão de menu em dispositivos móveis */
+    }
+
+    #navbar ul {
+        display: none; /* Oculta o menu por padrão em telas menores */
         flex-direction: column;
         background-color: #2a2e35;
         position: absolute;
@@ -357,21 +365,13 @@ footer {
         padding-top: 10px;
     }
 
-    header nav ul.active {
-        display: flex; /* Exibe o menu ao ativar */
+    #navbar ul.active {
+        display: flex; /* Exibe o menu quando a classe 'active' é aplicada */
     }
 
-    header nav ul li {
-        margin: 0;
+    #navbar ul li {
         text-align: center;
         padding: 10px 0;
-    }
-
-    .menu-toggle {
-        display: flex; /* Exibe o botão de menu em telas menores */
-    }
-
-    .lang-toggle {
-        margin-top: 10px;
+        border-top: 1px solid #444;
     }
 }
