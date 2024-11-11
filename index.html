@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moniky Ribeiro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="menu-home">Home</a></li>
+                    <li><a href="curriculo.html" class="menu-curriculo">Currículo</a></li>
+                    <li><a href="pesquisa.html" class="menu-pesquisa">Pesquisa</a></li>
+                    <li><a href="pessoal.html" class="menu-pessoal">Pessoal</a></li>
+                    <li><a href="contato.html" class="menu-contato">Contato</a></li>
+                </ul>
+            </nav>
+            <div class="lang-toggle">
+                <a href="?lang=pt">PT</a> | <a href="?lang=en">EN</a>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="intro">
+            <div class="intro-text">
+                <h1 class="title">Moniky Ribeiro</h1>   
+                <p class="description">Oi! Sou Doutoranda em Ciência da Computação (UFPE) e bolsista de pós-doutorado pela FAPEMIG (Unimontes). Trabalho com Engenharia de Requisitos e Segurança de Sistemas Críticos.</p>
+            </div>
+            <img src="images/foto.jpg" alt="Moniky Ribeiro" class="profile-pic">
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Moniky Ribeiro</p>
+    </footer>
+
+    <script>
+        // Translate page content based on the 'lang' parameter in the URL
+        function translatePage() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const lang = urlParams.get('lang') || 'pt';
+
+            document.querySelectorAll('nav a').forEach(link => {
+                const href = new URL(link.getAttribute('href'), window.location.origin);
+                href.searchParams.set('lang', lang);
+                link.setAttribute('href', href.toString());
+            });
+
+            // Language-specific content
+            if (lang === 'en') {
+                document.querySelector('.title').textContent = 'Moniky Ribeiro';
+                document.querySelector('.description').textContent = "Hi! I'm a PhD candidate in Computer Science (UFPE) and a postdoctoral fellow funded by FAPEMIG (Unimontes), working on Requirements Engineering and Critical Systems Safety.";
+                document.querySelector('.menu-home').textContent = 'Home';
+                document.querySelector('.menu-curriculo').textContent = 'Resume';
+                document.querySelector('.menu-pesquisa').textContent = 'Research';
+                document.querySelector('.menu-pessoal').textContent = 'Personal';
+                document.querySelector('.menu-contato').textContent = 'Contact';
+            } else {
+                document.querySelector('.title').textContent = 'Moniky Ribeiro';
+                document.querySelector('.description').textContent = "Oi! Sou Doutoranda em Ciência da Computação (UFPE) e bolsista de pós-doutorado pela FAPEMIG (Unimontes). Trabalho com Engenharia de Requisitos e Segurança de Sistemas Críticos.";
+                document.querySelector('.menu-home').textContent = 'Home';
+                document.querySelector('.menu-curriculo').textContent = 'Currículo';
+                document.querySelector('.menu-pesquisa').textContent = 'Pesquisa';
+                document.querySelector('.menu-pessoal').textContent = 'Pessoal';
+                document.querySelector('.menu-contato').textContent = 'Contato';
+            }
+        }
+
+        // Execute the translation function on page load
+        document.addEventListener('DOMContentLoaded', translatePage);
+    </script>
+</body>
+</html>

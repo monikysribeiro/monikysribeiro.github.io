@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interesses - Moniky Ribeiro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <ul>
+                    <li><a href="index.html?lang=pt" class="menu-home">Home</a></li>
+                    <li><a href="curriculo.html?lang=pt" class="menu-curriculo">Currículo</a></li>
+                    <li><a href="pesquisa.html?lang=pt" class="menu-pesquisa">Pesquisa</a></li>
+                    <li><a href="pessoal.html?lang=pt" class="menu-pessoal">Pessoal</a></li>
+                    <li><a href="contato.html?lang=pt" class="menu-contato">Contato</a></li>
+                </ul>
+            </nav>
+            <div class="lang-toggle">
+                <a href="?lang=pt">PT</a> | <a href="?lang=en">EN</a>
+            </div>
+        </div>
+    </header>
+    <main>
+        <h2>Interesses</h2>
+        <p>Meus interesses incluem temas como Engenharia de Requisitos, Segurança de Sistemas Críticos, e Robótica.</p>
+    </main>
+    <footer>
+        <p>&copy; 2024 Moniky Ribeiro</p>
+    </footer>
+    <script>
+        // Script de tradução do conteúdo
+        function translatePage() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const lang = urlParams.get('lang');
+
+            if (lang === 'en') {
+                document.querySelector('.title').textContent = 'Resume';
+                document.querySelector('.description').textContent = 'See my full resume here:';
+                document.querySelector('.menu-curriculo').textContent = 'Resume';
+                document.querySelector('.menu-pesquisa').textContent = 'Research';
+                document.querySelector('.menu-interesses').textContent = 'Interests';
+                document.querySelector('.menu-contato').textContent = 'Contact';
+                document.querySelector('.menu-pessoal').textContent = 'Personal';
+            } else {
+                document.querySelector('.title').textContent = 'Currículo';
+                document.querySelector('.description').textContent = 'Veja meu currículo completo:';
+                document.querySelector('.menu-curriculo').textContent = 'Currículo';
+                document.querySelector('.menu-pesquisa').textContent = 'Pesquisa';
+                document.querySelector('.menu-interesses').textContent = 'Interesses';
+                document.querySelector('.menu-contato').textContent = 'Contato';
+                document.querySelector('.menu-pessoal').textContent = 'Pessoal';
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', translatePage);
+    </script>
+</body>
+</html>
