@@ -329,7 +329,7 @@ footer {
     line-height: 1.6;
 }
 
-/* Estilo do botão de menu para dispositivos móveis */
+/* Estilos do botão de menu para dispositivos móveis */
 .menu-toggle {
     display: none;
     cursor: pointer;
@@ -344,11 +344,7 @@ footer {
     transition: 0.3s;
 }
 
-/* Oculta o menu no mobile por padrão */
-#navbar ul {
-    display: flex;
-}
-
+/* Estilos responsivos para o menu */
 @media (max-width: 768px) {
     .menu-toggle {
         display: flex; /* Exibe o botão de menu em dispositivos móveis */
@@ -365,13 +361,14 @@ footer {
         padding-top: 10px;
     }
 
-    #navbar ul.active {
+    #navbar.active ul {
         display: flex; /* Exibe o menu quando a classe 'active' é aplicada */
     }
 
     #navbar ul li {
-        text-align: center;
+        margin: 0;
         padding: 10px 0;
+        text-align: center;
         border-top: 1px solid #444;
     }
 }
