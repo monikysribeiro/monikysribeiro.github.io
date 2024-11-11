@@ -9,18 +9,19 @@
 <body>
     <header>
         <div class="container">
-            <div class="menu-toggle" onclick="toggleMenu()">
+            <!-- Botão de Menu Responsivo -->
+            <div class="menu-toggle" onclick="document.getElementById('navbar').classList.toggle('active')">
                 <span></span>
                 <span></span>
                 <span></span>
             </div>
             <nav id="navbar">
                 <ul>
-                    <li><a href="index.html" class="menu-home">Home</a></li>
-                    <li><a href="curriculo.html" class="menu-curriculo">Currículo</a></li>
-                    <li><a href="pesquisa.html" class="menu-pesquisa">Pesquisa</a></li>
-                    <li><a href="pessoal.html" class="menu-pessoal">Pessoal</a></li>
-                    <li><a href="contato.html" class="menu-contato">Contato</a></li>
+                    <li><a href="index.html" class="menu-home" data-lang-pt="Home" data-lang-en="Home">Home</a></li>
+                    <li><a href="curriculo.html" class="menu-curriculo" data-lang-pt="Currículo" data-lang-en="Resume">Currículo</a></li>
+                    <li><a href="pesquisa.html" class="menu-pesquisa" data-lang-pt="Pesquisa" data-lang-en="Research">Pesquisa</a></li>
+                    <li><a href="pessoal.html" class="menu-pessoal" data-lang-pt="Pessoal" data-lang-en="Personal">Pessoal</a></li>
+                    <li><a href="contato.html" class="menu-contato" data-lang-pt="Contato" data-lang-en="Contact">Contato</a></li>
                 </ul>
             </nav>
             <div class="lang-toggle">
@@ -31,8 +32,10 @@
     <main>
         <section class="intro">
             <div class="intro-text">
-                <h1 class="title">Moniky Ribeiro</h1>   
-                <p class="description">Oi! Sou Doutoranda em Ciência da Computação (UFPE) e bolsista de pós-doutorado pela FAPEMIG (Unimontes). Trabalho com Engenharia de Requisitos e Segurança de Sistemas Críticos.</p>
+                <h1 class="title" data-lang-pt="Moniky Ribeiro" data-lang-en="Moniky Ribeiro">Moniky Ribeiro</h1>   
+                <p class="description" data-lang-pt="Oi! Sou Doutoranda em Ciência da Computação (UFPE) e bolsista de pós-doutorado pela FAPEMIG (Unimontes). Trabalho com Engenharia de Requisitos e Segurança de Sistemas Críticos." data-lang-en="Hi! I'm a PhD candidate in Computer Science (UFPE) and a postdoctoral fellow funded by FAPEMIG (Unimontes), working on Requirements Engineering and Critical Systems Safety.">
+                    Oi! Sou Doutoranda em Ciência da Computação (UFPE) e bolsista de pós-doutorado pela FAPEMIG (Unimontes). Trabalho com Engenharia de Requisitos e Segurança de Sistemas Críticos.
+                </p>
             </div>
             <img src="images/foto.jpg" alt="Moniky Ribeiro" class="profile-pic">
         </section>
@@ -42,41 +45,27 @@
     </footer>
 
     <script>
-        function toggleMenu() {
-            document.getElementById("navbar").classList.toggle("active");
-        }
-        // Translate page content based on the 'lang' parameter in the URL
         function translatePage() {
             const urlParams = new URLSearchParams(window.location.search);
             const lang = urlParams.get('lang') || 'pt';
 
-            document.querySelectorAll('nav a').forEach(link => {
-                const href = new URL(link.getAttribute('href'), window.location.origin);
-                href.searchParams.set('lang', lang);
-                link.setAttribute('href', href.toString());
+            // Atualiza o texto com base nos atributos de idioma
+            document.querySelectorAll('[data-lang-pt]').forEach(element => {
+                const text = lang === 'en' ? element.getAttribute('data-lang-en') : element.getAttribute('data-lang-pt');
+                if (text) {
+                    element.textContent = text;
+                }
             });
 
-            // Language-specific content
-            if (lang === 'en') {
-                document.querySelector('.title').textContent = 'Moniky Ribeiro';
-                document.querySelector('.description').textContent = "Hi! I'm a PhD candidate in Computer Science (UFPE) and a postdoctoral fellow funded by FAPEMIG (Unimontes), working on Requirements Engineering and Critical Systems Safety.";
-                document.querySelector('.menu-home').textContent = 'Home';
-                document.querySelector('.menu-curriculo').textContent = 'Resume';
-                document.querySelector('.menu-pesquisa').textContent = 'Research';
-                document.querySelector('.menu-pessoal').textContent = 'Personal';
-                document.querySelector('.menu-contato').textContent = 'Contact';
-            } else {
-                document.querySelector('.title').textContent = 'Moniky Ribeiro';
-                document.querySelector('.description').textContent = "Oi! Sou Doutoranda em Ciência da Computação (UFPE) e bolsista de pós-doutorado pela FAPEMIG (Unimontes). Trabalho com Engenharia de Requisitos e Segurança de Sistemas Críticos.";
-                document.querySelector('.menu-home').textContent = 'Home';
-                document.querySelector('.menu-curriculo').textContent = 'Currículo';
-                document.querySelector('.menu-pesquisa').textContent = 'Pesquisa';
-                document.querySelector('.menu-pessoal').textContent = 'Pessoal';
-                document.querySelector('.menu-contato').textContent = 'Contato';
-            }
+            // Adiciona o parâmetro de idioma aos links do menu
+            document.querySelectorAll("nav a").forEach(link => {
+                const href = new URL(link.getAttribute('href'), window.location.origin);
+                href.searchParams.set("lang", lang);
+                link.setAttribute('href', href.toString());
+            });
         }
 
-        // Execute the translation function on page load
+        // Chama a função de tradução ao carregar a página
         document.addEventListener('DOMContentLoaded', translatePage);
     </script>
 </body>

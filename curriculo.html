@@ -9,7 +9,13 @@
 <body>
     <header>
         <div class="container">
-           <nav>
+            <!-- Botão de Menu Responsivo -->
+            <div class="menu-toggle" onclick="document.querySelector('header nav ul').classList.toggle('active')">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <nav>
                 <ul>
                     <li><a href="index.html" class="menu-home" data-lang-pt="Home" data-lang-en="Home">Home</a></li>
                     <li><a href="curriculo.html" class="menu-curriculo" data-lang-pt="Currículo" data-lang-en="Resume">Currículo</a></li>
@@ -54,7 +60,7 @@
             const urlParams = new URLSearchParams(window.location.search);
             const lang = urlParams.get('lang') || 'pt';
 
-            // Update text based on language attributes
+            // Atualiza o texto com base nos atributos de idioma
             document.querySelectorAll('[data-lang-pt]').forEach(element => {
                 const text = lang === 'en' ? element.getAttribute('data-lang-en') : element.getAttribute('data-lang-pt');
                 if (text) {
@@ -62,7 +68,7 @@
                 }
             });
 
-            // Append language parameter to menu links
+            // Adiciona o parâmetro de idioma aos links do menu
             document.querySelectorAll("nav a").forEach(link => {
                 const href = new URL(link.getAttribute('href'), window.location.href);
                 href.searchParams.set("lang", lang);
@@ -70,7 +76,7 @@
             });
         }
 
-        // Call translation function on page load
+        // Chama a função de tradução ao carregar a página
         document.addEventListener('DOMContentLoaded', translatePage);
     </script>
 </body>
