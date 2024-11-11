@@ -329,7 +329,7 @@ footer {
     line-height: 1.6;
 }
 
-/* Estilo do menu para dispositivos móveis */
+/* Estilo do botão de menu para dispositivos móveis */
 .menu-toggle {
     display: none;
     cursor: pointer;
