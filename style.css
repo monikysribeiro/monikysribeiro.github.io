@@ -328,3 +328,50 @@ footer {
     margin: 20px auto; /* Espaço vertical entre parágrafos */
     line-height: 1.6;
 }
+
+/* Adicionando estilos para o botão de menu para dispositivos móveis */
+.menu-toggle {
+    display: none; /* Oculto por padrão */
+    cursor: pointer;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background-color: #fdfdfd;
+    transition: 0.3s;
+}
+
+/* Tornando o menu responsivo */
+@media (max-width: 768px) {
+    header nav ul {
+        display: none; /* Escondido em dispositivos móveis por padrão */
+        flex-direction: column;
+        background-color: #2a2e35;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding-top: 10px;
+    }
+
+    header nav ul.active {
+        display: flex; /* Exibe o menu ao ativar */
+    }
+
+    header nav ul li {
+        margin: 0;
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    .menu-toggle {
+        display: flex; /* Exibe o botão de menu em telas menores */
+    }
+
+    .lang-toggle {
+        margin-top: 10px;
+    }
+}
