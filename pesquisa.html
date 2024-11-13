@@ -9,19 +9,41 @@
 <body>
     <header>
         <div class="container">
-            <!-- Botão de Menu Responsivo -->
-            <div class="menu-toggle" onclick="document.querySelector('header nav ul').classList.toggle('active')">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            <nav>
+            <button id="menu-toggle" class="menu-toggle" aria-label="Abrir Menu">
+                &#9776; 
+            </button>
+            <nav id="main-nav">
                 <ul>
-                    <li><a href="index.html" class="menu-home" data-lang-pt="Home" data-lang-en="Home">Home</a></li>
-                    <li><a href="curriculo.html" class="menu-curriculo" data-lang-pt="Currículo" data-lang-en="Resume">Currículo</a></li>
-                    <li><a href="pesquisa.html" class="menu-pesquisa" data-lang-pt="Pesquisa" data-lang-en="Research">Pesquisa</a></li>
-                    <li><a href="pessoal.html" class="menu-pessoal" data-lang-pt="Pessoal" data-lang-en="Personal">Pessoal</a></li>
-                    <li><a href="contato.html" class="menu-contato" data-lang-pt="Contato" data-lang-en="Contact">Contato</a></li>
+                    <li>
+                        <a href="index.html" class="menu-home" 
+                           data-lang-pt="Home" data-lang-en="Home">
+                           Home
+                        </a>
+                    </li>
+                    <li>
+                        <a href="curriculo.html" class="menu-curriculo" 
+                           data-lang-pt="Currículo" data-lang-en="Resume">
+                           Currículo
+                        </a>
+                    </li>
+                    <li>
+                        <a href="pesquisa.html" class="menu-pesquisa" 
+                           data-lang-pt="Pesquisa" data-lang-en="Research">
+                           Pesquisa
+                        </a>
+                    </li>
+                    <li>
+                        <a href="pessoal.html" class="menu-pessoal" 
+                           data-lang-pt="Pessoal" data-lang-en="Personal">
+                           Pessoal
+                        </a>
+                    </li>
+                    <li>
+                        <a href="contato.html" class="menu-contato" 
+                           data-lang-pt="Contato" data-lang-en="Contact">
+                           Contato
+                        </a>
+                    </li>
                 </ul>
             </nav>
             <div class="lang-toggle">
@@ -33,60 +55,70 @@
         <section class="research-content">
             <h3 class="section-title" data-lang-pt="Publicações" data-lang-en="Publications">Publicações</h3>
             <div class="card-grid">
+                <!-- Card 1 -->
                 <div class="research-card">
                     <a href="https://sol.sbc.org.br/index.php/sbes/article/view/30395" target="_blank">
                         <h4 data-lang-pt="Integrando STPA com Modelagem de Requisitos de Segurança" data-lang-en="Integrating STPA with Safety Requirements Modeling">Integrando STPA com Modelagem de Requisitos de Segurança</h4>
                     </a>
                     <p data-lang-pt="SBES '24, Curitiba, Paraná, Brasil, 2024" data-lang-en="SBES '24, Curitiba, Paraná, Brazil, 2024">SBES '24, Curitiba, Paraná, Brasil, 2024</p>
                 </div>
+                <!-- Card 2 -->
                 <div class="research-card">
                     <a href="https://ceur-ws.org/Vol-3533/iStar23_paper_7.pdf" target="_blank">
                         <h4 data-lang-pt="Integrando Modelagem Orientada a Objetivos e Análise de Segurança com Requirements4Safety" data-lang-en="Integrating Goal Oriented Requirements Modeling and Safety Analysis with Requirements4Safety">Integrando Modelagem Orientada a Objetivos e Análise de Segurança com Requirements4Safety</h4>
                     </a>
-                    <p data-lang-pt="iStar Workshop 2023, Hannover, Alemanha" data-lang-en="iStar Workshop 2023, Hannover, Germany">iStar Workshop 2023, Hannover, Germany</p>
+                    <p data-lang-pt="iStar Workshop 2023, Hannover, Alemanha" data-lang-en="iStar Workshop 2023, Hannover, Germany">iStar Workshop 2023, Hannover, Alemanha</p>
                 </div>
+                <!-- Card 3 -->
                 <div class="research-card">
                     <a href="http://wer.inf.puc-rio.br/WERpapers/artigos/artigos_WER23/WER_2023_paper_31.pdf" target="_blank">
                         <h4 data-lang-pt="Requirements4Safety - Construindo uma Técnica para Modelagem de Requisitos Iniciais de Segurança" data-lang-en="Requirements4Safety - Building a Technique for Early Safety Requirements Modeling">Requirements4Safety - Construindo uma Técnica para Modelagem de Requisitos Iniciais de Segurança</h4>
                     </a>
-                    <p data-lang-pt="Workshop em Engenharia de Requisitos, Porto Alegre, 2023" data-lang-en="Workshop on Requirements Engineering, Porto Alegre, 2023">Workshop on Requirements Engineering, Porto Alegre, 2023</p>
+                    <p data-lang-pt="Workshop em Engenharia de Requisitos, Porto Alegre, 2023" data-lang-en="Workshop on Requirements Engineering, Porto Alegre, 2023">Workshop em Engenharia de Requisitos, Porto Alegre, 2023</p>
                 </div>
+                <!-- Card 4 -->
                 <div class="research-card">
                     <a href="http://wer.inf.puc-rio.br/WERpapers/artigos/artigos_WER22/WER_2022_Camera_ready_paper_45.pdf" target="_blank">
                         <h4 data-lang-pt="Modelagem de Requisitos Iniciais de Segurança com Requirements4Safety" data-lang-en="Early Safety Requirements Modeling with Requirements4Safety">Modelagem de Requisitos Iniciais de Segurança com Requirements4Safety</h4>
                     </a>
                     <p data-lang-pt="WER 2022, Natal, 2022" data-lang-en="WER 2022, Natal, 2022">WER 2022, Natal, 2022</p>
                 </div>
+                <!-- Card 5 -->
                 <div class="research-card">
                     <a href="https://dl.acm.org/doi/abs/10.1145/3477314.3507004" target="_blank">
                         <h4 data-lang-pt="Engenharia de Requisitos para Veículos Autônomos: Uma Revisão Sistemática da Literatura" data-lang-en="Requirements Engineering for Autonomous Vehicles: A Systematic Literature Review">Engenharia de Requisitos para Veículos Autônomos: Uma Revisão Sistemática da Literatura</h4>
                     </a>
                     <p data-lang-pt="ACM SIGAPP Symposium on Applied Computing, 2022" data-lang-en="ACM SIGAPP Symposium on Applied Computing, 2022">ACM SIGAPP Symposium on Applied Computing, 2022</p>
                 </div>
+                <!-- Card 6 -->
                 <div class="research-card">
                     <a href="http://wer.inf.puc-rio.br/WERpapers/artigos/artigos_WER21/WER_2021_paper_45.pdf" target="_blank">
                         <h4 data-lang-pt="Casos de Garantia de Segurança aplicados a sistemas robóticos: revisão sistemática da literatura" data-lang-en="Safety Assurance Cases Applied to Robotic Systems: A Systematic Literature Review">Casos de Garantia de Segurança aplicados a sistemas robóticos: revisão sistemática da literatura</h4>
                     </a>
-                    <p data-lang-pt="Workshop em Engenharia de Requisitos, Brasília, 2021" data-lang-en="Workshop on Requirements Engineering, Brasília, 2021">Workshop on Requirements Engineering, Brasília, 2021</p>
+                    <p data-lang-pt="Workshop em Engenharia de Requisitos, Brasília, 2021" data-lang-en="Workshop on Requirements Engineering, Brasília, 2021">Workshop em Engenharia de Requisitos, Brasília, 2021</p>
                 </div>
+                <!-- Card 7 -->
                 <div class="research-card">
                     <a href="https://ceur-ws.org/Vol-2490/paper16.pdf" target="_blank">
                         <h4 data-lang-pt="Criando Ferramentas de Modelagem para Extensões da Linguagem i*" data-lang-en="Creating Modelling Tools for i* Language Extensions">Criando Ferramentas de Modelagem para Extensões da Linguagem i*</h4>
                     </a>
-                    <p data-lang-pt="12º Workshop Internacional i*, Salvador, 2019" data-lang-en="12th International i* Workshop, Salvador, 2019">12th International i* Workshop, Salvador, 2019</p>
+                    <p data-lang-pt="12º Workshop Internacional i*, Salvador, 2019" data-lang-en="12th International i* Workshop, Salvador, 2019">12º Workshop Internacional i*, Salvador, 2019</p>
                 </div>
+                <!-- Card 8 -->
                 <div class="research-card">
                     <a href="https://ceur-ws.org/Vol-2490/paper15.pdf" target="_blank">
                         <h4 data-lang-pt="iStar para Sistemas Críticos de Segurança" data-lang-en="iStar for Safety-Critical Systems">iStar para Sistemas Críticos de Segurança</h4>
                     </a>
-                    <p data-lang-pt="12º Workshop Internacional i*, Salvador, 2019" data-lang-en="12th International i* Workshop, Salvador, 2019">12th International i* Workshop, Salvador, 2019</p>
+                    <p data-lang-pt="12º Workshop Internacional i*, Salvador, 2019" data-lang-en="12th International i* Workshop, Salvador, 2019">12º Workshop Internacional i*, Salvador, 2019</p>
                 </div>
+                <!-- Card 9 -->
                 <div class="research-card">
                     <a href="http://wer.inf.puc-rio.br/WERpapers/artigos/artigos_WER19/WER_2019_paper_22.pdf" target="_blank">
                         <h4 data-lang-pt="iStar4Safety: Uma Extensão de iStar para Modelagem de Requisitos de Segurança em Sistemas Críticos" data-lang-en="iStar4Safety: An iStar Extension for Safety Requirements Modeling in Critical Systems">iStar4Safety: Uma Extensão de iStar para Modelagem de Requisitos de Segurança em Sistemas Críticos</h4>
                     </a>
-                    <p data-lang-pt="Workshop em Engenharia de Requisitos, Recife, 2019" data-lang-en="Workshop on Requirements Engineering, Recife, 2019">Workshop on Requirements Engineering, Recife, 2019</p>
+                    <p data-lang-pt="Workshop em Engenharia de Requisitos, Recife, 2019" data-lang-en="Workshop on Requirements Engineering, Recife, 2019">Workshop em Engenharia de Requisitos, Recife, 2019</p>
                 </div>
+                <!-- Card 10 -->
                 <div class="research-card">
                     <a href="http://wer.inf.puc-rio.br/WERpapers/artigos/artigos_WER17/paper_73.pdf" target="_blank">
                         <h4 data-lang-pt="Engenharia de Requisitos para Sistemas Robóticos: Um Estudo de Mapeamento Sistemático" data-lang-en="Requirements Engineering for Robotic Systems: A Systematic Mapping Study">Engenharia de Requisitos para Sistemas Robóticos: Um Estudo de Mapeamento Sistemático</h4>
@@ -111,26 +143,6 @@
         <p>&copy; 2024 Moniky Ribeiro</p>
     </footer>
 
-    <script>
-        function translatePage() {
-            const urlParams = new URLSearchParams(window.location.search);
-            const lang = urlParams.get('lang') || 'pt';
-
-            document.querySelectorAll('[data-lang-pt]').forEach(element => {
-                const text = lang === 'en' ? element.getAttribute('data-lang-en') : element.getAttribute('data-lang-pt');
-                if (text) {
-                    element.textContent = text;
-                }
-            });
-
-            document.querySelectorAll("nav a").forEach(link => {
-                const href = new URL(link.getAttribute('href'), window.location.href);
-                href.searchParams.set("lang", lang);
-                link.setAttribute('href', href.href);
-            });
-        }
-
-        document.addEventListener('DOMContentLoaded', translatePage);
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>

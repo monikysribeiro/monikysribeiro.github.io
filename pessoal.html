@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
@@ -9,19 +9,41 @@
 <body>
     <header>
         <div class="container">
-            <!-- Botão de Menu Responsivo -->
-            <div class="menu-toggle" onclick="toggleMenu()">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            <nav id="navbar">
+            <button id="menu-toggle" class="menu-toggle" aria-label="Abrir Menu">
+                &#9776; 
+            </button>
+            <nav id="main-nav">
                 <ul>
-                    <li><a href="index.html" class="menu-home" data-lang-pt="Home" data-lang-en="Home">Home</a></li>
-                    <li><a href="curriculo.html" class="menu-curriculo" data-lang-pt="Currículo" data-lang-en="Resume">Currículo</a></li>
-                    <li><a href="pesquisa.html" class="menu-pesquisa" data-lang-pt="Pesquisa" data-lang-en="Research">Pesquisa</a></li>
-                    <li><a href="pessoal.html" class="menu-pessoal" data-lang-pt="Pessoal" data-lang-en="Personal">Pessoal</a></li>
-                    <li><a href="contato.html" class="menu-contato" data-lang-pt="Contato" data-lang-en="Contact">Contato</a></li>
+                    <li>
+                        <a href="index.html" class="menu-home" 
+                           data-lang-pt="Home" data-lang-en="Home">
+                           Home
+                        </a>
+                    </li>
+                    <li>
+                        <a href="curriculo.html" class="menu-curriculo" 
+                           data-lang-pt="Currículo" data-lang-en="Resume">
+                           Currículo
+                        </a>
+                    </li>
+                    <li>
+                        <a href="pesquisa.html" class="menu-pesquisa" 
+                           data-lang-pt="Pesquisa" data-lang-en="Research">
+                           Pesquisa
+                        </a>
+                    </li>
+                    <li>
+                        <a href="pessoal.html" class="menu-pessoal" 
+                           data-lang-pt="Pessoal" data-lang-en="Personal">
+                           Pessoal
+                        </a>
+                    </li>
+                    <li>
+                        <a href="contato.html" class="menu-contato" 
+                           data-lang-pt="Contato" data-lang-en="Contact">
+                           Contato
+                        </a>
+                    </li>
                 </ul>
             </nav>
             <div class="lang-toggle">
@@ -29,14 +51,19 @@
             </div>
         </div>
     </header>
-    <main>
-        <h2 class="section-title" data-lang-pt="Sobre Mim" data-lang-en="About Me">Sobre Mim</h2>
 
-        <p class="section-content paragraph-1" data-lang-pt="Oi! Sou Moniky. Atualmente, sou doutoranda em Ciência da Computação e pesquisadora no LICA. 
+    <main>
+        <h2 class="section-title" 
+            data-lang-pt="Sobre Mim" data-lang-en="About Me">
+            Sobre Mim
+        </h2>
+
+        <p class="section-content paragraph-1" 
+           data-lang-pt="Oi! Sou Moniky. Atualmente, sou doutoranda em Ciência da Computação e pesquisadora no LICA. 
             Além de ser apaixonada pela pesquisa, amo dar aulas! Tenho vários outros interesses (a melhor banda do mundo, 
             p.ex., é Legião Urbana, e a poesia, a forma mais sublime 
             do ser humano se expressar)." 
-            data-lang-en="Hi! I'm Moniky. I’m currently a PhD candidate in Computer Science and a researcher at LICA. 
+           data-lang-en="Hi! I'm Moniky. I’m currently a PhD candidate in Computer Science and a researcher at LICA. 
             In addition to my passion for research, I love teaching! I also have many other interests (the best band 
             in the world, for example, is Legião Urbana, and poetry, 
             to me, is the most sublime form of human expression).">
@@ -46,11 +73,12 @@
             do ser humano se expressar).
         </p>
         
-        <p class="section-content paragraph-2" data-lang-pt="Nasci em Montes Claros, a “Princesa do Norte”, que tem o melhor pão de queijo e muita gente boa, 
+        <p class="section-content paragraph-2" 
+           data-lang-pt="Nasci em Montes Claros, a “Princesa do Norte”, que tem o melhor pão de queijo e muita gente boa, 
             e me aventurei pelo Nordeste após a graduação, onde mergulhei na cultura vibrante de Recife — do brega ao maracatu, 
             do cuscuz ao bolo de rolo! Amo muito minha família e dedico tudo que faço, hoje, à memória de 
             Karen, minha irmã (na foto abaixo ❤️)."
-            data-lang-en="I was born in Montes Claros, the “Princess of the North,” known for its amazing pão de queijo and wonderful people, 
+           data-lang-en="I was born in Montes Claros, the “Princess of the North,” known for its amazing pão de queijo and wonderful people, 
             and ventured to the Northeast after graduation, immersing myself in Recife’s vibrant culture — from brega to maracatu, 
             from cuscuz to bolo de rolo! I love my family deeply and dedicate everything I do today to the memory of 
             Karen, my sister (in the photo below ❤️).">
@@ -60,18 +88,18 @@
             <span class="highlight-karen">Karen</span>, minha irmã (na foto abaixo ❤️).
         </p>
         
-        <!-- Foto de Karen alinhada à direita -->
         <div class="karen-photo">
             <img src="images/karen.png" alt="Karen">
         </div>
 
-        <p class="section-content paragraph-3" data-lang-pt="Estou sempre animada para explorar novas ideias, conhecer novas pessoas, e confesso que sou um pouco ansiosa e indecisa😅. 
-            Seja aprendendo sobre inovações, conhecendo culturas diferentes ou curtindo a família e amigos, acredito que devemos aproveitar 
+        <p class="section-content paragraph-3" 
+           data-lang-pt="Estou sempre animada para explorar novas ideias, conhecer novas pessoas, e confesso que sou um pouco ansiosa e indecisa😅. 
+            Seja aprendendo sobre inovações, conhecendo culturas diferentes ou curtindo minha família e amigos, acredito que devemos aproveitar 
             cada momento da vida da melhor forma!" 
-            data-lang-en="I'm always excited to explore new ideas, meet new people, and, I admit, I can be a bit anxious and indecisive 😅. Whether learning about 
-            innovations, experiencing different cultures, or spending time with family and friends, I believe we should make the most of every moment in life!">
+           data-lang-en="I'm always excited to explore new ideas, meet new people, and, I admit, I can be a bit anxious and indecisive 😅. Whether learning about 
+            innovations, experiencing different cultures, or spending time with my family and friends, I believe we should make the most of every moment in life!">
             Estou sempre animada para explorar novas ideias, conhecer novas pessoas, e confesso que sou um pouco ansiosa e indecisa 😅. 
-            Seja aprendendo sobre inovações, conhecendo culturas diferentes ou curtindo a família e amigos, acredito que devemos aproveitar 
+            Seja aprendendo sobre inovações, conhecendo culturas diferentes ou curtindo minha família e amigos, acredito que devemos aproveitar 
             cada momento da vida da melhor forma!
         </p>
     </main>
@@ -80,31 +108,7 @@
         <p>&copy; 2024 Moniky Ribeiro</p>
     </footer>
 
-    <script>
-        function toggleMenu() {
-            document.getElementById("navbar").classList.toggle("active");
-        }
-
-        function translatePage() {
-            const urlParams = new URLSearchParams(window.location.search);
-            const lang = urlParams.get('lang') || 'pt';
-
-            document.querySelectorAll('[data-lang-pt]').forEach(element => {
-                const text = lang === 'en' ? element.getAttribute('data-lang-en') : element.getAttribute('data-lang-pt');
-                if (text) {
-                    element.textContent = text;
-                }
-            });
-
-            // Adiciona o parâmetro de idioma aos links do menu
-            document.querySelectorAll("nav a").forEach(link => {
-                const href = new URL(link.getAttribute('href'), window.location.href);
-                href.searchParams.set("lang", lang);
-                link.setAttribute('href', href.href);
-            });
-        }
-
-        document.addEventListener('DOMContentLoaded', translatePage);
-    </script>
+    <!-- Importa o arquivo JavaScript externo para a tradução -->
+    <script src="script.js"></script>
 </body>
 </html>

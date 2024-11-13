@@ -9,19 +9,41 @@
 <body>
     <header>
         <div class="container">
-            <!-- Botão de Menu Responsivo -->
-            <div class="menu-toggle" onclick="document.querySelector('header nav ul').classList.toggle('active')">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            <nav>
+            <button id="menu-toggle" class="menu-toggle" aria-label="Abrir Menu">
+                &#9776;
+            </button>
+            <nav id="main-nav">
                 <ul>
-                    <li><a href="index.html" class="menu-home" data-lang-pt="Home" data-lang-en="Home">Home</a></li>
-                    <li><a href="curriculo.html" class="menu-curriculo" data-lang-pt="Currículo" data-lang-en="Resume">Currículo</a></li>
-                    <li><a href="pesquisa.html" class="menu-pesquisa" data-lang-pt="Pesquisa" data-lang-en="Research">Pesquisa</a></li>
-                    <li><a href="pessoal.html" class="menu-pessoal" data-lang-pt="Pessoal" data-lang-en="Personal">Pessoal</a></li>
-                    <li><a href="contato.html" class="menu-contato" data-lang-pt="Contato" data-lang-en="Contact">Contato</a></li>
+                    <li>
+                        <a href="index.html" class="menu-home" 
+                           data-lang-pt="Home" data-lang-en="Home">
+                           Home
+                        </a>
+                    </li>
+                    <li>
+                        <a href="curriculo.html" class="menu-curriculo" 
+                           data-lang-pt="Currículo" data-lang-en="Resume">
+                           Currículo
+                        </a>
+                    </li>
+                    <li>
+                        <a href="pesquisa.html" class="menu-pesquisa" 
+                           data-lang-pt="Pesquisa" data-lang-en="Research">
+                           Pesquisa
+                        </a>
+                    </li>
+                    <li>
+                        <a href="pessoal.html" class="menu-pessoal" 
+                           data-lang-pt="Pessoal" data-lang-en="Personal">
+                           Pessoal
+                        </a>
+                    </li>
+                    <li>
+                        <a href="contato.html" class="menu-contato" 
+                           data-lang-pt="Contato" data-lang-en="Contact">
+                           Contato
+                        </a>
+                    </li>
                 </ul>
             </nav>
             <div class="lang-toggle">
@@ -31,20 +53,23 @@
     </header>
     <main>
         <section class="curriculum-content">
-            <h2 class="title" data-lang-pt="Currículo" data-lang-en="Resume">Currículo</h2>
+            <h2 class="section-title" data-lang-pt="Currículos" data-lang-en="Resumes">Currículos</h2>
             <div class="card-grid">
                 <div class="curriculum-card">
-                    <a href="https://br.linkedin.com/in/monikyribeiro" target="_blank" class="linkLinkedIn" data-lang-pt="Currículo no LinkedIn" data-lang-en="LinkedIn Resume">
+                    <a href="https://br.linkedin.com/in/monikyribeiro" target="_blank" class="linkLinkedIn" 
+                       data-lang-pt="Currículo no LinkedIn" data-lang-en="LinkedIn Resume">
                         <h4>Currículo no LinkedIn</h4>
                     </a>
                 </div>
                 <div class="curriculum-card">
-                    <a href="https://lattes.cnpq.br/4864557311702195" target="_blank" class="linkLattes" data-lang-pt="Currículo Lattes" data-lang-en="Lattes Resume">
+                    <a href="https://lattes.cnpq.br/4864557311702195" target="_blank" class="linkLattes" 
+                       data-lang-pt="Currículo Lattes" data-lang-en="Lattes Resume">
                         <h4>Currículo Lattes</h4>
                     </a>
                 </div>
                 <div class="curriculum-card">
-                    <a href="https://scholar.google.com.br/citations?user=GA2KyPoAAAAJ&hl=en" target="_blank" class="linkScholar" data-lang-pt="Perfil no Google Scholar" data-lang-en="Google Scholar Profile">
+                    <a href="https://scholar.google.com.br/citations?user=GA2KyPoAAAAJ&hl=en" target="_blank" class="linkScholar" 
+                       data-lang-pt="Perfil no Google Scholar" data-lang-en="Google Scholar Profile">
                         <h4>Perfil no Google Scholar</h4>
                     </a>
                 </div>
@@ -54,30 +79,6 @@
     <footer>
         <p>&copy; 2024 Moniky Ribeiro</p>
     </footer>
-
-    <script>
-        function translatePage() {
-            const urlParams = new URLSearchParams(window.location.search);
-            const lang = urlParams.get('lang') || 'pt';
-
-            // Atualiza o texto com base nos atributos de idioma
-            document.querySelectorAll('[data-lang-pt]').forEach(element => {
-                const text = lang === 'en' ? element.getAttribute('data-lang-en') : element.getAttribute('data-lang-pt');
-                if (text) {
-                    element.textContent = text;
-                }
-            });
-
-            // Adiciona o parâmetro de idioma aos links do menu
-            document.querySelectorAll("nav a").forEach(link => {
-                const href = new URL(link.getAttribute('href'), window.location.href);
-                href.searchParams.set("lang", lang);
-                link.setAttribute('href', href.href);
-            });
-        }
-
-        // Chama a função de tradução ao carregar a página
-        document.addEventListener('DOMContentLoaded', translatePage);
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>

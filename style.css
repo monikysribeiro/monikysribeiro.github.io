@@ -34,7 +34,7 @@ header {
     width: 100%;
     top: 0;
     z-index: 1000;
-    box-shadow: 0px 3px 5px rgba(128, 0, 128, 0.3); /* Sutil sombra roxa para visual moderno */
+    box-shadow: 0px 3px 5px rgba(128, 0, 128, 0.3);
 }
 
 /* Container for header content */
@@ -47,6 +47,17 @@ header .container {
     padding: 0 20px;
 }
 
+/* Estilo para o botão de menu toggle */
+.menu-toggle {
+    display: none;
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #fdfdfd;
+}
+
+/* Estilos para o menu normal em telas grandes */
 header nav ul {
     display: flex;
     list-style: none;
@@ -69,6 +80,49 @@ header nav ul li a:hover {
 
 .lang-toggle {
     color: #fdfdfd;
+    margin-left: auto;
+    order: 3;
+}
+
+/* Responsivo para telas menores */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: row;
+        align-items: center;
+        padding: 0 10px;
+    }
+
+    .menu-toggle {
+        display: block;
+        order: 1;
+    }
+
+    .lang-toggle {
+        order: 3; /* Mantém o seletor de idioma no final, à direita */
+        margin-left: auto; /* Posiciona o seletor de idioma à direita */
+    }
+
+    /* Oculta o menu inicialmente em telas pequenas */
+    header nav ul {
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px;
+        background-color: #2a2e35;
+        position: absolute;
+        top: 60px;
+        left: 10px;
+        width: auto;
+        border-radius: 5px;
+    }
+
+    header nav.active ul {
+        display: flex;
+    }
+
+    header nav ul li {
+        margin: 5px 0;
+    }
 }
 
 /* Intro Section */
@@ -109,7 +163,7 @@ footer {
     background-color: #2a2e35;
     color: #fdfdfd;
     width: 100%;
-    box-shadow: 0px -3px 5px rgba(128, 0, 128, 0.3); /* Sutil sombra roxa para visual moderno */
+    box-shadow: 0px -3px 5px rgba(128, 0, 128, 0.3);
     position: relative;
 }
 
@@ -135,7 +189,7 @@ footer {
 }
 
 .home-icon:hover {
-    color: #ff6b6b; /* Cor ao passar o mouse */
+    color: #ff6b6b;
 }
 
 /* Estilos para a seção de pesquisa */
@@ -184,7 +238,6 @@ footer {
     display: flex;
     flex-direction: column;
     min-height: 120px;
-    
 }
 
 .research-card:hover {
@@ -197,7 +250,6 @@ footer {
     color: #333;
     margin-bottom: 8px;
     font-weight: bold;
-    
 }
 
 .research-card p {
@@ -302,7 +354,6 @@ footer {
     display: inline-block;
 }
 
-
 .karen-photo {
     margin: 20px auto;
     width: 200px;
@@ -325,50 +376,6 @@ footer {
 
 .section-content {
     max-width: 800px;
-    margin: 20px auto; /* Espaço vertical entre parágrafos */
+    margin: 20px auto;
     line-height: 1.6;
-}
-
-/* Estilos do botão de menu para dispositivos móveis */
-.menu-toggle {
-    display: none;
-    cursor: pointer;
-    flex-direction: column;
-    gap: 5px;
-}
-
-.menu-toggle span {
-    width: 25px;
-    height: 3px;
-    background-color: #fdfdfd;
-    transition: 0.3s;
-}
-
-/* Estilos responsivos para o menu */
-@media (max-width: 768px) {
-    .menu-toggle {
-        display: flex; /* Exibe o botão de menu em dispositivos móveis */
-    }
-
-    #navbar ul {
-        display: none; /* Oculta o menu por padrão em telas menores */
-        flex-direction: column;
-        background-color: #2a2e35;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        padding-top: 10px;
-    }
-
-    #navbar.active ul {
-        display: flex; /* Exibe o menu quando a classe 'active' é aplicada */
-    }
-
-    #navbar ul li {
-        margin: 0;
-        padding: 10px 0;
-        text-align: center;
-        border-top: 1px solid #444;
-    }
 }

@@ -10,19 +10,41 @@
 <body>
     <header>
         <div class="container">
-            <!-- Botão de Menu Responsivo -->
-            <div class="menu-toggle" onclick="document.querySelector('header nav ul').classList.toggle('active')">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            <nav>
+            <button id="menu-toggle" class="menu-toggle" aria-label="Abrir Menu">
+                &#9776; 
+            </button>
+            <nav id="main-nav">
                 <ul>
-                    <li><a href="index.html" class="menu-home" data-lang-pt="Home" data-lang-en="Home">Home</a></li>
-                    <li><a href="curriculo.html" class="menu-curriculo" data-lang-pt="Currículo" data-lang-en="Resume">Currículo</a></li>
-                    <li><a href="pesquisa.html" class="menu-pesquisa" data-lang-pt="Pesquisa" data-lang-en="Research">Pesquisa</a></li>
-                    <li><a href="pessoal.html" class="menu-pessoal" data-lang-pt="Pessoal" data-lang-en="Personal">Pessoal</a></li>
-                    <li><a href="contato.html" class="menu-contato" data-lang-pt="Contato" data-lang-en="Contact">Contato</a></li>
+                    <li>
+                        <a href="index.html" class="menu-home" 
+                           data-lang-pt="Home" data-lang-en="Home">
+                           Home
+                        </a>
+                    </li>
+                    <li>
+                        <a href="curriculo.html" class="menu-curriculo" 
+                           data-lang-pt="Currículo" data-lang-en="Resume">
+                           Currículo
+                        </a>
+                    </li>
+                    <li>
+                        <a href="pesquisa.html" class="menu-pesquisa" 
+                           data-lang-pt="Pesquisa" data-lang-en="Research">
+                           Pesquisa
+                        </a>
+                    </li>
+                    <li>
+                        <a href="pessoal.html" class="menu-pessoal" 
+                           data-lang-pt="Pessoal" data-lang-en="Personal">
+                           Pessoal
+                        </a>
+                    </li>
+                    <li>
+                        <a href="contato.html" class="menu-contato" 
+                           data-lang-pt="Contato" data-lang-en="Contact">
+                           Contato
+                        </a>
+                    </li>
                 </ul>
             </nav>
             <div class="lang-toggle">
@@ -43,7 +65,7 @@
                 <a href="https://instagram.com/monikyribeiro" target="_blank" class="contact-icon" title="Instagram">
                     <i class="fab fa-instagram"></i>
                 </a>
-                <a href="https://github.com/monikysribeiro" target="_blank" class="contact-icon" title="GitHub">
+                <a href="https://github.com/monikyribeiro" target="_blank" class="contact-icon" title="GitHub">
                     <i class="fab fa-github"></i>
                 </a>
                 <a href="https://scholar.google.com.br/citations?user=GA2KyPoAAAAJ&hl=en" target="_blank" class="contact-icon" title="Google Scholar">
@@ -56,27 +78,6 @@
         <p>&copy; 2024 Moniky Ribeiro</p>
     </footer>
 
-    <script>
-        function translatePage() {
-            const urlParams = new URLSearchParams(window.location.search);
-            const lang = urlParams.get('lang') || 'pt';
-
-            document.querySelectorAll('[data-lang-pt]').forEach(element => {
-                const text = lang === 'en' ? element.getAttribute('data-lang-en') : element.getAttribute('data-lang-pt');
-                if (text) {
-                    element.textContent = text;
-                }
-            });
-
-            // Adds the current language parameter to all menu links
-            document.querySelectorAll("nav a").forEach(link => {
-                const href = new URL(link.getAttribute('href'), window.location.href);
-                href.searchParams.set("lang", lang);
-                link.setAttribute('href', href.href);
-            });
-        }
-
-        document.addEventListener('DOMContentLoaded', translatePage);
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>

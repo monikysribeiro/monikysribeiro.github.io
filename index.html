@@ -9,13 +9,10 @@
 <body>
     <header>
         <div class="container">
-            <!-- Botão de Menu Responsivo -->
-            <div class="menu-toggle" onclick="toggleMenu()">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            <nav id="navbar">
+            <button id="menu-toggle" class="menu-toggle" aria-label="Abrir Menu">
+                &#9776;
+            </button>
+            <nav id="main-nav">
                 <ul>
                     <li><a href="index.html" class="menu-home" data-lang-pt="Home" data-lang-en="Home">Home</a></li>
                     <li><a href="curriculo.html" class="menu-curriculo" data-lang-pt="Currículo" data-lang-en="Resume">Currículo</a></li>
@@ -33,9 +30,7 @@
         <section class="intro">
             <div class="intro-text">
                 <h1 class="title" data-lang-pt="Moniky Ribeiro" data-lang-en="Moniky Ribeiro">Moniky Ribeiro</h1>   
-                <p class="description" data-lang-pt="Oi! Sou Doutoranda em Ciência da Computação (UFPE) e bolsista de pós-doutorado pela FAPEMIG (Unimontes). Trabalho com Engenharia de Requisitos e Segurança de Sistemas Críticos." data-lang-en="Hi! I'm a PhD candidate in Computer Science (UFPE) and a postdoctoral fellow funded by FAPEMIG (Unimontes), working on Requirements Engineering and Critical Systems Safety.">
-                    Oi! Sou Doutoranda em Ciência da Computação (UFPE) e bolsista de pós-doutorado pela FAPEMIG (Unimontes). Trabalho com Engenharia de Requisitos e Segurança de Sistemas Críticos.
-                </p>
+                <p class="description" data-lang-pt="Oi! Sou Doutoranda em Ciência da Computação (UFPE) e bolsista de pós-doutorado pela FAPEMIG (Unimontes). Trabalho com Engenharia de Requisitos e Segurança de Sistemas Críticos." data-lang-en="Hi! I'm a PhD candidate in Computer Science (UFPE) and a postdoctoral fellow funded by FAPEMIG (Unimontes), working on Requirements Engineering and Critical Systems Safety.">Oi! Sou Doutoranda em Ciência da Computação (UFPE) e bolsista de pós-doutorado pela FAPEMIG (Unimontes). Trabalho com Engenharia de Requisitos e Segurança de Sistemas Críticos.</p>
             </div>
             <img src="images/foto.jpg" alt="Moniky Ribeiro" class="profile-pic">
         </section>
@@ -44,31 +39,7 @@
         <p>&copy; 2024 Moniky Ribeiro</p>
     </footer>
 
-    <script>
-        function toggleMenu() {
-            const navbar = document.getElementById("navbar");
-            navbar.classList.toggle("active");
-        }
-
-        function translatePage() {
-            const urlParams = new URLSearchParams(window.location.search);
-            const lang = urlParams.get('lang') || 'pt';
-
-            document.querySelectorAll('[data-lang-pt]').forEach(element => {
-                const text = lang === 'en' ? element.getAttribute('data-lang-en') : element.getAttribute('data-lang-pt');
-                if (text) {
-                    element.textContent = text;
-                }
-            });
-
-            document.querySelectorAll("nav a").forEach(link => {
-                const href = new URL(link.getAttribute('href'), window.location.origin);
-                href.searchParams.set("lang", lang);
-                link.setAttribute('href', href.toString());
-            });
-        }
-
-        document.addEventListener('DOMContentLoaded', translatePage);
-    </script>
+    <!-- Importa o arquivo JavaScript externo -->
+    <script src="script.js"></script>
 </body>
 </html>
