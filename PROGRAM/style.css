@@ -1,0 +1,439 @@
+/* Reset básico e estilo global */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', 'Helvetica Neue', Arial, sans-serif; 
+    line-height: 1.4;
+    color: #333333; 
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f4f7fc;
+    color: #333;
+}
+
+/* Estilo do container principal */
+.container {
+    width: 100%;
+    max-width: 750px;
+    padding: 2.5rem;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Título principal */
+h1 {
+    font-size: 1.8rem; 
+    color: #2C3E50; 
+    text-align: center; 
+    margin-bottom: 2rem; 
+    font-weight: 700; 
+    letter-spacing: 0.05rem; 
+}
+
+
+/* Estilo dos subcontainers */
+.subcontainer {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.subcontainer h2 {
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.subcontainer:hover {
+    transform: translateY(-4px); /* Elevação sutil */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.12), 0 2px 4px rgba(0, 0, 0, 0.08); /* Sombras mais destacadas */
+}
+
+/* Campo de Iteração */
+.iteration-field {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    justify-content: center;
+}
+
+.iteration-field label {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #555;
+}
+
+.iteration-field input[type="number"] {
+    width: 70px;
+    padding: 0.5rem;
+    border: 1px solid #d1d5da;
+    border-radius: 6px;
+    font-size: 1rem;
+    color: #333;
+    outline: none;
+    text-align: center;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.iteration-field input[type="number"]:focus {
+    border-color: #0074D9;
+    box-shadow: 0 0 0 3px rgba(0, 116, 217, 0.2);
+}
+
+/* Estilo do formulário */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* Estilo do fieldset */
+fieldset {
+    border: none;
+    padding: 0;
+    margin-bottom: 2rem;
+}
+
+legend {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #e1e4e8;
+}
+
+/* Grupo de formulários */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.5rem;
+}
+
+/* Estilo dos campos de entrada */
+textarea,
+input[type="text"] {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #d1d5da;
+    border-radius: 6px;
+    font-size: 1rem;
+    color: #333;
+    outline: none;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+textarea:focus,
+input[type="text"]:focus {
+    border-color: #0074D9;
+    box-shadow: 0 0 0 3px rgba(0, 116, 217, 0.2);
+}
+
+/* Botões */
+.button-group {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.button-group button {
+    flex: 1;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 6px;
+    background-color: #0074D9;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button-group button:hover {
+    background-color: #005bb5;
+}
+
+.input-group-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.add-btn {
+    padding: 0.3rem 0.6rem;
+    background-color: #0074D9;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.add-btn:hover {
+    background-color: #005bb5;
+}
+
+.remove-btn {
+    padding: 0.3rem 0.6rem;
+    background-color: #0074D9;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.remove-btn:hover {
+    background-color: #005bb5;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.lang-btn {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 6px;
+    background-color: #0074D9;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.lang-btn:hover {
+    background-color: #005bb5;
+}
+
+/* Estilo para o seletor e seu rótulo */
+.association-label {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #555;
+    margin-top: 1rem;
+    display: block;
+}
+
+/* Estilo para o seletor de associação e feedback */
+.select-group {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+select {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #d1d5da;
+    border-radius: 6px;
+    font-size: 1rem;
+    color: #333;
+    background-color: #f9f9f9;
+    outline: none;
+    cursor: pointer;
+}
+
+select:focus {
+    border-color: #0074D9;
+    box-shadow: 0 0 0 3px rgba(0, 116, 217, 0.2);
+}
+
+.associated-feedback {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.feedback-item {
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    background-color: #0074D9;
+    color: #fff;
+    font-size: 0.9rem;
+    font-weight: bold;
+    display: inline-block;
+}
+
+/* Campo de texto de Hazard */
+.hazard-input {
+    flex: 1;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid #d1d5da;
+    border-radius: 6px;
+    margin-right: 0.5rem;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hazard-input:focus {
+    border-color: #0074D9;
+    box-shadow: 0 0 0 3px rgba(0, 116, 217, 0.2);
+}
+
+.accident-input {
+    flex: 1;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid #d1d5da;
+    border-radius: 6px;
+    margin-right: 0.5rem;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.accident-input:focus {
+    border-color: #0074D9;
+    box-shadow: 0 0 0 3px rgba(0, 116, 217, 0.2);
+}
+
+/* Campo de texto de UCA */
+.uca-input {
+    flex: 1;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid #d1d5da;
+    border-radius: 6px;
+    margin-right: 0.5rem;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.uca-input:focus {
+    border-color: #0074D9;
+    box-shadow: 0 0 0 3px rgba(0, 116, 217, 0.2);
+}
+
+/* Campo de texto de cause */
+.cause-input {
+    flex: 1;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid #d1d5da;
+    border-radius: 6px;
+    margin-right: 0.5rem;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cause-input:focus {
+    border-color: #0074D9;
+    box-shadow: 0 0 0 3px rgba(0, 116, 217, 0.2);
+}
+
+/* Campo de texto de cause */
+.mitigations-input {
+    flex: 1;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid #d1d5da;
+    border-radius: 6px;
+    margin-right: 0.5rem;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.mitigations-input:focus {
+    border-color: #0074D9;
+    box-shadow: 0 0 0 3px rgba(0, 116, 217, 0.2);
+}
+
+/* Botão pequeno para adicionar hazard */
+.small-add-btn {
+    padding: 0.25rem 0.4rem;
+    font-size: 0.8rem;
+    background-color: #0074D9;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.small-add-btn:hover {
+    background-color: #005bb5;
+    transform: scale(1.1);
+}
+
+/* Grupo de seleção de acidente */
+.select-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.associated-accident-select {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #d1d5da;
+    border-radius: 6px;
+    background-color: #f9f9f9;
+    font-size: 1rem;
+    color: #333;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.associated-accident-select:focus {
+    border-color: #0074D9;
+    box-shadow: 0 0 0 3px rgba(0, 116, 217, 0.2);
+}
+
+.associated-component-select {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #d1d5da;
+    border-radius: 6px;
+    background-color: #f9f9f9;
+    font-size: 1rem;
+    color: #333;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.associated-component-select:focus {
+    border-color: #0074D9;
+    box-shadow: 0 0 0 3px rgba(0, 116, 217, 0.2);
+}
+
+
+.associated-feedback {
+    margin-top: 0.5rem;
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.feedback-item {
+    background-color: #0074D9;
+    color: #fff;
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+}

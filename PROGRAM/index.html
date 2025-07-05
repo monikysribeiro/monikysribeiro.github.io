@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="title_url">ReSafety - Passo 1 - Formulário Inicial</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Título principal e botão de troca de idioma -->
+        <div class="header">
+            <h1 id="page-title">Passo 1 - Definir Escopo do Sistema Crítico de Segurança (SCS)</h1>
+            <button id="language-toggle" class="lang-btn" onclick="toggleLanguage()">PT</button>
+        </div>
+        
+        <!-- Campo de Iteração -->
+        <div class="iteration-field">
+            <label for="iteration-number" id="iteration-label">Iteração nº</label>
+            <input type="number" id="iteration-number" name="iteration-number" placeholder="1" min="1" required>
+        </div>
+
+        <!-- Subcontainer para Questões Gerais -->
+        <div class="subcontainer" id="general-questions">
+            <!-- <h2 id="general-title">Questões Gerais</h2> -->
+            <form action="#" method="post">
+                <fieldset>
+                    <legend id="general-legend">Questões gerais</legend>
+                    
+                    <div class="form-group">
+                        <label for="objetivos" id="objetivos-label">Objetivos da Análise</label>
+                        <textarea name="objetivos" id="objetivos" placeholder="Defina os objetivos da análise..." required></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="sistema" id="sistema-label">Definição do Sistema</label>
+                        <textarea name="sistema" id="sistema" placeholder="Descreva o sistema e seu escopo..." required></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="recursos" id="recursos-label">Documentos externos para Análise</label>
+                        <div class="input-group-container" id="recursos-container">
+                            <div class="input-group">
+                                <input type="text" name="recursos[]" placeholder="Exemplo: 'Manual LX300'">
+                                <button type="button" class="add-btn" onclick="addField('recursos-container', 'recursos')">+</button>
+                                <button type="button" class="remove-btn" onclick="removeField(this)">-</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="limite_sistema" id="componentes-label">Componentes do sistema</label>
+                        <div class="input-group-container" id="componentes-container">
+                            <div class="input-group">
+                                <input type="text" name="components[]" placeholder="Exemplo: Controlador da bomba de insulina, médico">
+                                <button type="button" class="add-btn" onclick="addField('componentes-container', 'components')">+</button>  
+                                <button type="button" class="remove-btn" onclick="removeField(this)">-</button>                   
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="stakeholders" id="stakeholders-label">Stakeholders Estratégicos</label>
+                        <textarea name="stakeholders" id="stakeholders" placeholder="Ex.: Médico, enfermeiro..."></textarea>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+        
+        <!-- Subcontainer para Questões de Segurança -->
+        <div class="subcontainer" id="safety-questions">
+            <!-- <h2 id="safety-title">Questões de Segurança</h2> -->
+            <form action="#" method="post">
+                <fieldset>
+                    <legend id="safety-legend">Questões de Segurança</legend>
+
+                    <div class="form-group">
+                        <label id="accident-label">Identificação de Acidentes</label>
+                        <div class="input-group-container" id="accident-container">                            
+                            </div>
+                        </div>
+                                      
+                    <div class="form-group">
+                        <label id="hazards-label">Identificação de Hazards (Perigos) à Nível do Sistema</label>
+                        <div class="input-group-container" id="hazards-container">
+                            <!-- Hazard e associação de acidentes serão adicionados dinamicamente aqui -->
+                        </div>                        
+                    </div>
+                    
+                    <div class="form-group">
+                        <label id="ucas-label">Unsafe Control Actions (UCAs) Relacionadas a Hazards</label>
+                        <div class="input-group-container" id="uca-container">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label id="causes-label">Causas dos Hazards</label>
+                        <div class="input-group-container" id="causes_hazards-container">                                
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label id="mitigations-label">Mitigações de Hazards</label>
+                        <div class="input-group-container" id="mitigations-container">                            
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+        
+        <!-- Botões de Salvamento -->
+        <div class="form-group button-group">
+            <button type="button" onclick="saveAsTxt()">Salvar análise em TXT</button>
+            <button type="button" onclick="saveForStepII()">Salvar análise para Etapa II</button>
+            <button type="button" onclick="saveAsDoc()">Salvar análise em DOC</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+
+</body>
+</html>
